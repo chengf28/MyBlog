@@ -1,20 +1,46 @@
 <template>
-    <nav class="nav">
+    <nav v-bind:class="navClassName">
         <div class="container">
             <div id="logo">
-                <img
-                    src="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdoAAAB3CAMAAACTz3EZAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA/1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/dnaEebm2AAAAU3RSTlMA/fb8BcGrtLado6cJB5CZEJwVEYiUGZodFpYcHhSNnhikGg+wEgSgsrim+vu3v6z4u8K5xa3d1v7k0eEGx9cXH7zMIyctKLowJS8bsQ69Ac/YAgz0B3cAAAABYktHRACIBR1IAAAACXBIWXMAAABOAAAATgGxzR8zAAADeElEQVR42u3WZ1NTURSF4ZCiicFCQEHEAoKCiURDsWBFrIjt+v9/i+m5CYkznhU8a9as/ZEPz9l3v5MZMhmFSdKDCyEzw7BD7A5nMARnHZ5IO2Qn2tl/2GOKk8ujAsFZKX61SWECfS5sI3iS87AQ/6zDE22H4li5FLgRPElyAfzdcpyVYofy7Cn34qXQjeBpPnz5CiownJVih7nKCDu/ELwRPK2Xr15DBYazUuywuDSkXl8I3wie9tPLN1CB4awUO5RWUujNW8BG8HTevn0HFRjOSrHD6lrfvLuMbARP9/HyPCownJVih/WNLnnvPrQRPL3XN4P/T2Y6K8UOW91TPqhypK09RAWKszLskNtui/VH2Ebw9J+vPkYFhrNS7FBrNMF6dfCH/5PyL5+0AwvTOKuEsJupwx486Q32CI6iIuAePHxH0RCcVlZwWlnBaWUFp5UVnFZWcFpZwWllBaeVFZxWVnBaWcFpZQWnlRWcVlZwWlnBaWUFp5UVnFZWcFpZAfb4PsmC04oLTisrOK2s4LSygtPKCk4rKzitrOC0soLTygpOKys4razgtLKC08oKTisrOK2s4LSygtPKCk4rKzitrOC0soLTygpOKys4razgtLKC08oKTisrOK2s4LSygtPKCk4rKzitrOC0soLTygpOKys4razgtLKC08oKTisrOK2s4LSygtPKCk4rKzitrOC0soLTygpOKys4razgtLKC08oKTisrOK2s4LSyAu7Bw3cUDcFpZQWnlRWcVlZwWlnBaWUFibQMO/AJBHclWIEwDC4Q3JVgBcIwuEBwV4IVCMPgAsFdCVYgDIMLBHclWIEwDC4Q3JVgBcIwuEBwV4IVCMPgAsFdCVYgDIMLBHclWIEwDC4Q3JVgBcIwuEBwV4IVCMPgAsFdCVYgDIMKu5n9hGr2gz7pd3oIzjoFAZxaowk+mYmdczBPnwXdxGk7MyiZ226B+eexgw7m4IXTTiXtVr4tVl7GLtqbV6/DyjrtyKxvdMk3b2M37czhu8CyTjs8q2t982gzdtXWFN6HlnXaoSmtpNAPe7G7JsnHT8FlnTY9i0tD6ud67LLFL+FlnTY1c5UR9vhr3LI7R0BZpx1MefaUe/ItZtnGMVLWaftTHAd/P4xX9scJVNZpe1OYQP+MVfbgF1bWabuTPUM7aHJ5sKzTjnv2D2hjNKQECJFOAAAAAElFTkSuQmCC"
-                    alt="w!nd"
-                />
+                <img v-bind:src="imgUrl" alt="NioKu" />
             </div>
             <div class="nav-navbar">
-                <a class="nav-item">Home</a>
-                <a class="nav-item">Poto</a>
-                <a class="nav-item">Content</a>
+                <a class="nav-item">
+                    <p>首页</p>
+                </a>
+                <a class="nav-item">
+                    <p>摄影</p>
+                </a>
+                <a class="nav-item">
+                    <p>文章</p>
+                </a>
             </div>
         </div>
     </nav>
 </template>
 <script>
-export default {};
+import { EventBus } from "../../even_bus";
+export default {
+    data() {
+        return {
+            navClassName: ["nav"],
+            imgUrl:'/storage/img/logo_w.png',
+        };
+    },
+    mounted() {
+        EventBus.$on(
+            "nav_change",
+            function(swt) {
+                if (swt) {
+                    this.navClassName.push('active');
+                    this.imgUrl = '/storage/img/logo.png';
+                } else {
+                    this.navClassName.pop();
+                    this.imgUrl = '/storage/img/logo_w.png';
+
+                }
+            }.bind(this)
+        );
+    }
+};
 </script>

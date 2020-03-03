@@ -4,7 +4,7 @@ body{
 }
 </style>
 <template>
-    <div>
+    <div class="content">
         <navigation></navigation>
         <router-view></router-view>
     </div>    
