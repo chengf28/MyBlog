@@ -1,5 +1,5 @@
 <style>
-body{
+body {
     margin: 0;
 }
 </style>
@@ -7,13 +7,14 @@ body{
     <div class="content">
         <navigation></navigation>
         <router-view></router-view>
-    </div>    
+    </div>
 </template>
 <script>
-import Navigation from '../components/global/Navigation';
+import Navigation from "../components/global/Navigation";
 export default {
-    components:{
+    components: {
         Navigation
+        
     }
-}
+};
 </script>

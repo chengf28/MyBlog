@@ -26,6 +26,7 @@ import router from './routes/web.js';
 
 // import 'element-ui/lib/theme-chalk/index.css';
 import './../sass/app.scss';
+import './../sass/iconfont.css';
 
 // Vue.use(ElementUI);
 

@@ -5,14 +5,23 @@
                 <img v-bind:src="imgUrl" alt="NioKu" />
             </div>
             <div class="nav-navbar">
+                <router-link :to="{name:'home'}" class="nav-item">
+                    <p>
+                        首页
+                        <span class="iconfont icon-home"></span>
+                    </p>
+                </router-link>
+                <router-link :to="{name:'photo'}" class="nav-item">
+                    <p>
+                        摄影
+                        <span class="iconfont icon-shexianghei"></span>
+                    </p>
+                </router-link>
                 <a class="nav-item">
-                    <p>首页</p>
-                </a>
-                <a class="nav-item">
-                    <p>摄影</p>
-                </a>
-                <a class="nav-item">
-                    <p>文章</p>
+                    <p>
+                        文章
+                        <span class="iconfont icon-icon-test"></span>
+                    </p>
                 </a>
             </div>
         </div>
@@ -24,20 +33,20 @@ export default {
     data() {
         return {
             navClassName: ["nav"],
-            imgUrl:'/storage/img/logo_w.png',
+            imgUrl: "/storage/img/logo_w.png"
         };
     },
+
     mounted() {
         EventBus.$on(
             "nav_change",
             function(swt) {
                 if (swt) {
-                    this.navClassName.push('active');
-                    this.imgUrl = '/storage/img/logo.png';
+                    this.navClassName.push("active");
+                    this.imgUrl = "/storage/img/logo.png";
                 } else {
                     this.navClassName.pop();
-                    this.imgUrl = '/storage/img/logo_w.png';
-
+                    this.imgUrl = "/storage/img/logo_w.png";
                 }
             }.bind(this)
         );
