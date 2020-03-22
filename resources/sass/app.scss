@@ -45,13 +45,21 @@ html,
 body,
 #app,
 .content {
-    height: 100%;
     position: relative;
 }
 
 $nav_height: 100px;
 $font_color: rgb(231, 231, 231);
-
+footer {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #f4f4f4;
+    background: #272727;
+    position: relative;
+    bottom: 0;
+}
 @media screen and (min-width: 1240px) {
     @mixin spaceleft {
         margin-left: 10px;
@@ -230,6 +238,10 @@ $font_color: rgb(231, 231, 231);
             background-color: #f4f4f4;
         }
 
+        #content_display{
+            background-color: #fff;
+        }
+
         #photo_display,
         #content_display {
             width: 100%;
@@ -239,6 +251,8 @@ $font_color: rgb(231, 231, 231);
             }
         }
     }
+
+    
     $width: 380px;
     $padding: 10px;
     .pannel_container {

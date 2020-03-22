@@ -1,6 +1,6 @@
 <template>
     <div id="body">
-        <section id="welcome" ref="welcome">
+        <section id="welcome"  ref="welcome">
             <div>
                 <h2>
                     天才只
@@ -106,7 +106,6 @@
                 </div>
             </div>
         </section>
-        <icp></icp>
     </div>
 </template>
 
@@ -116,9 +115,6 @@ import _ from "lodash";
 import Icp from "../components/global/Icp_footer";
 
 export default {
-    components:{
-        Icp
-    },
     data() {
         return {
             sectionHeight: 0,
@@ -127,9 +123,10 @@ export default {
         };
     },
     mounted() {
-        console.log(this.$refs.welcome.clientHeight);
-
-        this.sectionHeight = this.$refs.welcome.clientHeight - 100;
+        
+        EventBus.$emit("nav_change", false);
+        this.$refs['welcome'].style.height = window.innerHeight + 'px';
+        this.sectionHeight =window.innerHeight - 100;
         window.onscroll = function() {
             this.handleScroll(
                 document.body.scrollTop || document.documentElement.scrollTop

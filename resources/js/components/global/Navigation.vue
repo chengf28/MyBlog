@@ -42,11 +42,15 @@ export default {
             "nav_change",
             function(swt) {
                 if (swt) {
-                    this.navClassName.push("active");
-                    this.imgUrl = "/storage/img/logo.png";
+                    if (this.navClassName.indexOf("active") < 0) {
+                        this.navClassName.push("active");
+                        this.imgUrl = "/storage/img/logo.png";
+                    }
                 } else {
-                    this.navClassName.pop();
-                    this.imgUrl = "/storage/img/logo_w.png";
+                    if (this.navClassName.indexOf("active") >= 0) {
+                        this.navClassName.pop();
+                        this.imgUrl = "/storage/img/logo_w.png";
+                    }
                 }
             }.bind(this)
         );

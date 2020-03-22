@@ -7,14 +7,17 @@ body {
     <div class="content">
         <navigation></navigation>
         <router-view></router-view>
+        <icp></icp>
     </div>
 </template>
 <script>
 import Navigation from "../components/global/Navigation";
+import Icp from "../components/global/Icp_footer";
+
 export default {
     components: {
-        Navigation
-        
+        Navigation,
+        Icp
     }
 };
 </script>
