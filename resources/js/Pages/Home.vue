@@ -1,6 +1,6 @@
 <template>
     <div id="body">
-        <section id="welcome"  ref="welcome">
+        <section id="welcome" ref="welcome">
             <div>
                 <h2>
                     天才只
@@ -12,33 +12,8 @@
             </div>
         </section>
         <section id="photo_display">
-            <div class="container pannel_container img_pannel_container">
-                <div class="img_pannel">
-                    <div class="img">
-                        <img src="/storage/img/img1.jpg" alt />
-                    </div>
-                    <div class="img_desc">
-                        <div class="img_title">
-                            <p>春天</p>
-                        </div>
-                        <div class="img_body"></div>
-                    </div>
-                </div>
-
-                <div class="img_pannel">
-                    <div class="img">
-                        <img src="/storage/img/img2.jpg" alt />
-                    </div>
-                    <div class="img_desc">
-                        <div class="img_title">
-                            <p>车站</p>
-                            <span class="time">2020年3月6日00:39:26</span>
-                        </div>
-                        <div class="img_body">
-                            <p>I am a ready to be your portfolio, telling your stories and short presentations.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="container">
+                <photo-panel :images="images"></photo-panel>
             </div>
         </section>
         <section id="content_display">
@@ -112,21 +87,82 @@
 <script>
 import { EventBus } from "../even_bus.js";
 import _ from "lodash";
-import Icp from "../components/global/Icp_footer";
+import PhotoPanel from "../components/global/PhotoPanel";
 
 export default {
+    components: {
+        PhotoPanel
+    },
     data() {
         return {
             sectionHeight: 0,
             maxScroll: 0,
-            isChange: false
+            isChange: false,
+            images: [
+                {
+                    title: "图1",
+                    date: "2020年3月6日00:39:26",
+                    src: "/storage/img/img1.jpg",
+                    desc: "This is a photo description"
+                },
+                {
+                    title: "图2",
+                    date: "2020年3月6日00:39:26",
+                    src: "/storage/img/img2.jpg",
+                    desc: "This is a photo description"
+                },
+                {
+                    title: "图1",
+                    date: "2020年3月6日00:39:26",
+                    src: "/storage/img/img1.jpg",
+                    desc: "This is a photo description"
+                },
+                {
+                    title: "图2",
+                    date: "2020年3月6日00:39:26",
+                    src: "/storage/img/img2.jpg",
+                    desc: "This is a photo description"
+                },{
+                    title: "图1",
+                    date: "2020年3月6日00:39:26",
+                    src: "/storage/img/img1.jpg",
+                    desc: "This is a photo description"
+                },
+                {
+                    title: "图2",
+                    date: "2020年3月6日00:39:26",
+                    src: "/storage/img/img2.jpg",
+                    desc: "This is a photo description"
+                },{
+                    title: "图1",
+                    date: "2020年3月6日00:39:26",
+                    src: "/storage/img/img1.jpg",
+                    desc: "This is a photo description"
+                },
+                {
+                    title: "图2",
+                    date: "2020年3月6日00:39:26",
+                    src: "/storage/img/img2.jpg",
+                    desc: "This is a photo description"
+                },{
+                    title: "图1",
+                    date: "2020年3月6日00:39:26",
+                    src: "/storage/img/img1.jpg",
+                    desc: "This is a photo description"
+                },
+                {
+                    title: "图2",
+                    date: "2020年3月6日00:39:26",
+                    src: "/storage/img/img2.jpg",
+                    desc: "This is a photo description"
+                },
+            ]
         };
     },
     mounted() {
-        
         EventBus.$emit("nav_change", false);
-        this.$refs['welcome'].style.height = window.innerHeight + 'px';
-        this.sectionHeight =window.innerHeight - 100;
+        this.$refs["welcome"].style.height = window.innerHeight + "px";
+        this.sectionHeight = window.innerHeight - 100;
         window.onscroll = function() {
             this.handleScroll(
                 document.body.scrollTop || document.documentElement.scrollTop

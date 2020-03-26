@@ -14,8 +14,6 @@
                         <div class="img_body">{{photo.description}}</div>
                     </div>
                 </div>
-
-               
             </div>
         </section>
     </div>
