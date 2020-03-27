@@ -1,6 +1,6 @@
 <template>
     <div class="pannel_container">
-        <div class="essay_pannel" v-for="essay in essays" :key="essay.title">
+        <div class="essay_pannel" v-for="(essay,index) in essays" :key="index">
             <div class="essay_title">
                 <p>{{essay.title}}</p>
                 <span class="time">{{essay.date}}</span>

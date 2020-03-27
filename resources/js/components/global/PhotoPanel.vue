@@ -1,6 +1,6 @@
 <template>
     <div class="pannel_container img_pannel_container">
-        <div class="img_pannel" v-for="image in images" :key="image.title">
+        <div class="img_pannel" v-for="(image,index) in images" :key="index">
             <div class="img">
                 <img :src="image.src" alt="test" />
             </div>
