@@ -158,6 +158,9 @@ export default {
                 }
             }
         }
+    },
+    destroyed(){
+        window.onscroll = null;
     }
 };
 </script>
