@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 
 import Home from '../Pages/Home';
 import Layout from '../Pages/Layout';
-import Photo from "../Pages/Photo";
+import PhotoTags from "../Pages/PhotoTags";
 
 export default new VueRouter({
     routes: [
@@ -26,7 +26,7 @@ export default new VueRouter({
                 }, {
                     'path': 'photo',
                     'name': 'photo',
-                    'component': Photo
+                    'component': PhotoTags
                 }
             ]
         }

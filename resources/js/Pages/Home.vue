@@ -160,6 +160,7 @@ export default {
         }
     },
     destroyed(){
+        EventBus.$emit('nav_change',false);
         window.onscroll = null;
     }
 };
