@@ -260,7 +260,6 @@ footer {
         padding: 100px 0;
         text-align: center;
         span[class="time"] {
-            display: block;
             font-size: 1rem;
             font-style: italic;
             color: #c9c9c9;
@@ -283,6 +282,9 @@ footer {
             // min-height: $width;
 
             .essay_title {
+                span[class="time"] {
+                    display: block;
+                }
                 // height: 50px;
                 font-size: 25px;
                 // line-height: 50px;
