@@ -436,3 +436,37 @@ footer {
         }
     }
 }
+
+.test {
+    width: 100px;
+    height: 100px;
+    animation: myfirst 5s infinite;
+    border: 1px solid #000;
+}
+
+@keyframes myfirst {
+    25% {
+        border-radius: 50%;    
+    }
+    50% {
+        border-radius: 0;
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;
+        border-top-color:#000;
+    }
+    75% {
+        border-radius: 0;
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;
+        border-left-color:#000;
+    }
+    100% {
+        border-radius: 0;
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;
+        border-bottom-color:#000;
+    }
+}

@@ -1,7 +1,10 @@
 <template>
     <div>
         <section id="photo_display">
-            <div class="img_tags_container">
+            <div class="test">
+                
+            </div>
+            <!-- <div class="img_tags_container">
                 <ul>
                     <li v-for="tag in tags" :key="tag.tagId" @click="onClick(tag.tagId)">
                         <img :src="tag.src" alt />
@@ -10,7 +13,7 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div> -->
             <!-- <photo-panel :images="photos"></photo-panel>; -->
         </section>
     </div>
