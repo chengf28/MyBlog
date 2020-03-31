@@ -1,0 +1,21 @@
+{
+    "code": 1,
+    "msg": "ok",
+    "data": [
+        {
+            "name": "食物",
+            "src": "/storage/img/img2.jpg",
+            "tagId": 1
+        },
+        {
+            "name": "风景",
+            "src": "/storage/img/img1.jpg",
+            "tagId": 2
+        },
+        {
+            "name": "抽象",
+            "src": "/storage/img/img1.jpg",
+            "tagId": 3
+        }
+    ]
+}

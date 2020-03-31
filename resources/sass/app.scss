@@ -382,6 +382,9 @@ footer {
             padding: 0;
             // width: $container_width;
             > li {
+                &:nth-child(1) {
+                    padding-top: $nav_height;
+                }
                 // width: $container_width;
                 height: 300px;
                 margin: 0 auto;

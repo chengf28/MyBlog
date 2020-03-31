@@ -21,15 +21,17 @@ if (token) {
 import Vue from 'vue';
 
 import router from './routes/web.js';
+import store from './store.js';
+
 
 // import ElementUI from 'element-ui';
 
 // import 'element-ui/lib/theme-chalk/index.css';
 import './../sass/app.scss';
 import './../sass/iconfont.css';
-
 // Vue.use(ElementUI);
 
 new Vue({
-    router
+    router,
+    store
 }).$mount('#app');

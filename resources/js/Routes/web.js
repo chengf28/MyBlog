@@ -27,6 +27,10 @@ export default new VueRouter({
                     'path': 'photo',
                     'name': 'photo',
                     'component': PhotoTags
+                }, {
+                    'path': 'photos/:tagid',
+                    'name': 'photos',
+                    'component': require('#/Photos').default,
                 }
             ]
         }
