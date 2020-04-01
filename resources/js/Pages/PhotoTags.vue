@@ -4,6 +4,7 @@
             <div class="test">
                 
             </div>
+            
             <!-- <div class="img_tags_container">
                 <ul>
                     <li v-for="tag in tags" :key="tag.tagId" @click="onClick(tag.tagId)">
