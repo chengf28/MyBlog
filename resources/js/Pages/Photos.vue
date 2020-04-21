@@ -1,25 +1,27 @@
 <template>
     <div>
         <section id="photo_display">
-            {{$route.params.tagid}}
-            <photo-panel :images="photos"></photo-panel>;
+            <div class="pannel_container">
+                {{$route.params.tagid}}
+                
+            </div>
         </section>
     </div>
 </template>
 <script>
-import PhotoPanel from '../components/global/PhotoPanel';
+import PhotoPanel from "../components/global/PhotoPanel";
+import { EventBus } from "../even_bus.js";
 export default {
-    components:{
-        PhotoPanel
-    }
-    ,data() {
+    data() {
         return {
-            photos:[
-                {
-                    
-                }
-            ]
+            
         };
+    },
+    mounted() {
+        EventBus.$emit("nav_change", true);
+    },
+    destroyed() {
+        EventBus.$emit("nav_change", false);
     }
 };
 </script>

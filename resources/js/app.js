@@ -31,6 +31,7 @@ import './../sass/app.scss';
 import './../sass/iconfont.css';
 // Vue.use(ElementUI);
 
+
 new Vue({
     router,
     store

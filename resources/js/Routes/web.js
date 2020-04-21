@@ -13,17 +13,15 @@ export default new VueRouter({
     routes: [
         {
             'path': '/',
+            'name': 'home',
+            'component': Home
+        },
+        {
+            'path': 'layout',
             'name': 'layout',
             'component': Layout,
-            'redirect': {
-                'name': 'home'
-            },
             'children': [
                 {
-                    'path': 'home',
-                    'name': 'home',
-                    'component': Home
-                }, {
                     'path': 'photo',
                     'name': 'photo',
                     'component': PhotoTags

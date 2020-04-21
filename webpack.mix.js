@@ -23,4 +23,10 @@ mix.js('resources/js/app.js', 'public/js')
       devServer: {
          contentBase: path.resolve(__dirname, "public"),
       },
+   })
+   .options({
+      hmrOptions: {
+         host:'localhost',
+         port: 8099,
+      }
    });

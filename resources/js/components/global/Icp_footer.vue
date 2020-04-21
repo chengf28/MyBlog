@@ -3,6 +3,6 @@
 </style>
 <template>
     <footer>
-        <!-- 备案号:123 -->
+        备案号:123
     </footer>
 </template>
