@@ -26,7 +26,10 @@ mix.js('resources/js/app.js', 'public/js')
    })
    .options({
       hmrOptions: {
-         host:'localhost',
+         host: 'localhost',
          port: 8099,
       }
+   })
+   .browserSync({
+      proxy: 'localhost:8099',
    });
