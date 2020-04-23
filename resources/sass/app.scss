@@ -484,139 +484,42 @@ html,
 body,
 #app {
     height: 100%;
+    font-family: roboto, sans-serif;
 }
 #home {
     height: 100%;
     overflow: visible;
-    // .banner {
-    //     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
-    //         Arial, sans-serif;
-    //     background-color: rgba($color: #000000, $alpha: 0.2);
-    //     width: 100%;
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    //     margin: auto;
-    //     text-align: center;
-    //     padding: 2rem 0;
-    //     height: 3rem;
-    //     font-size: 3rem;
-    //     font-weight: 500;
-    //     color: #f2f2f2;
-    //     > div {
-    //         cursor: default;
-    //         position: relative;
-    //         display: inline-block;
-    //         > span {
-    //             font-size: 1.5rem;
-    //             vertical-align: middle;
-    //             position: absolute;
-    //             top: -1.5rem;
-    //             right: 0;
-    //             &:first-letter {
-    //                 color: red;
-    //             }
-    //         }
-    //     }
-    // }
-    > section {
+    section {
+        width: 100%;
         height: 100%;
         overflow: hidden;
-        > nav {
-            display: flex;
-            height: 100%;
-            .nav-item {
-                $font_size: 1.5rem;
-                $font_color: #f2f2f2;
-                height: 100%;
-                width: 100%;
-                text-decoration: none;
-                text-align: center;
-                color: #272727;
-                box-sizing: border-box;
-                background-size: cover;
-                background-position: center center;
-                padding-top: $font_size + 1;
+        &:nth-child(1) {
+            background-attachment: fixed;
+            background-image: url('/storage/img/b16.jpg');
+        }
+        .banner {
+            background-color: rgba($color: #000000, $alpha: 0.2);
+            width: 100%;
+            text-align: center;
+            padding: 2rem 0;
+            height: 3rem;
+            font-size: 3rem;
+            font-weight: 500;
+            color: #f2f2f2;
+            > div {
+                cursor: default;
                 position: relative;
-                @for $i from 1 through 3 {
-                    &:nth-child(#{$i}) {
-                        background-image: url("/storage/img/h-n-b#{$i}.jpg");
-                        transition: all #{$i/5}s;
-                        background-color: #000;
-                    }
-                }
-                .nav-name {
-                    transition: all 0.1s;
-                    font-size: $font_size;
-                    width: $font_size;
-                    padding: $font_size 0;
-                    position: relative;
-                    display: inline-block;
+                display: inline-block;
+                > span {
+                    font-size: 1.5rem;
                     vertical-align: middle;
-                    background-color: rgba($color: #000000, $alpha: 0.2);
-                    color: $font_color;
-                    &::before {
-                        content: "「";
-                        display: block;
-                        height: $font_size;
-                        left: -$font_size;
-                        font-weight: bold;
-                        top: -$font_size;
-                        position: absolute;
-                    }
-                    &::after {
-                        content: "」";
-                        display: block;
-                        height: $font_size;
-                        right: -$font_size;
-                        bottom: -$font_size;
-                        font-weight: bold;
-                        position: absolute;
-                    }
-                }
-                .desc {
-                    transition: all 0.3s;
-                    background-color: rgba($color: #000000, $alpha: 0.5);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    height: 100%;
-                    width: 100%;
                     position: absolute;
-                    padding: $font_size;
-                    box-sizing: border-box;
-                    left: 0;
-                    top: 0;
-                    > .nav-desc {
-                        display: inline-block;
-                        font-size: $font_size;
-                        line-height: $font_color;
-                        padding: 0 $font_size;
-                        position: relative;
-                        vertical-align: middle;
-                        color: $font_color;
-                        &::before {
-                            content: "「";
-                            display: block;
-                            left: -$font_size;
-                            font-weight: bold;
-                            top: -($font_size/2);
-                            position: absolute;
-                        }
-                        &::after {
-                            content: "」";
-                            display: block;
-                            right: -$font_size;
-                            bottom: -($font_size/2);
-                            font-weight: bold;
-                            position: absolute;
-                        }
+                    top: -1.5rem;
+                    right: 0;
+                    &:first-letter {
+                        color: red;
                     }
                 }
-            }
-            .nav-hide {
-                transform: scale(0);
             }
         }
     }

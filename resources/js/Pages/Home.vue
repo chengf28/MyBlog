@@ -1,32 +1,23 @@
 <template>
     <div id="home">
         <section>
-            <nav>
-                <!-- <router-link :to="{name:'home'}" class="nav-item">
-                    <p>首页</p>
-                </router-link>-->
-                <div
-                    v-for="(router,index) in routers"
-                    :key="index"
-                    class="nav-item"
-                    @mouseover="over"
-                    @mouseout="out"
-                >
-                    <router-link v-bind:to="router.name">
+            <div class="banner">
+                <div>
+                    天才只尿裤
+                    <span>NioKu</span>
+                </div>
+            </div>
+            <!-- <nav>
+                <div v-for="(router,index) in routers" :key="index" class="nav-item">
+                    <a v-bind:to="router.name">
                         <p class="nav-name">{{router.meta.name}}</p>
                         <div class="desc nav-hide">
                             <p class="nav-desc">{{router.meta.descript}}</p>
                         </div>
-                    </router-link>
+                    </a>
                 </div>
-            </nav>
+            </nav> -->
         </section>
-        <!-- <div class="banner">
-            <div>
-                天才只尿裤
-                <span>NioKu</span>
-            </div>
-        </div>-->
     </div>
 </template>
 
