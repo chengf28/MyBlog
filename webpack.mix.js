@@ -29,7 +29,7 @@ mix.js('resources/js/app.js', 'public/js')
          host: 'localhost',
          port: 8099,
       }
-   })
-   .browserSync({
-      proxy: 'localhost:8099',
    });
+   // .browserSync({
+   //    proxy: 'localhost:8099',
+   // });
