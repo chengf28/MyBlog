@@ -1,65 +1,29 @@
 <template>
     <div id="home">
-        <section>
-            <div class="banner">
-                <div>
-                    天才只尿裤
-                    <span>NioKu</span>
-                </div>
+        <section v-for="route in routes" :key="route.name">
+            <div class="descriptText">
+                <!-- <H2>{{routes[0].meta.name}}</H2> -->
+                <!-- <p>{{routes[0].meta.descript}}</p> -->
+                <H2>{{route.meta.name}}</H2>
+                <p>{{route.meta.descript}}</p>
             </div>
-            <!-- <nav>
-                <div v-for="(router,index) in routers" :key="index" class="nav-item">
-                    <a v-bind:to="router.name">
-                        <p class="nav-name">{{router.meta.name}}</p>
-                        <div class="desc nav-hide">
-                            <p class="nav-desc">{{router.meta.descript}}</p>
-                        </div>
-                    </a>
-                </div>
-            </nav> -->
+            <!-- <div class="descriptImg">
+                <img src="/storage/img/b16.jpg" alt />
+            </div> -->
         </section>
     </div>
 </template>
 
 <script>
 export default {
+    mounted() {
+        this.routes = this.$router.options.routes[1].children;
+        console.log(this.routes);
+    },
     data() {
         return {
-            routers: []
+            routes: []
         };
-    },
-    mounted() {
-        this.routers = this.$router.options.routes[1].children;
-    },
-    methods: {
-        over(e) {
-            if (!e.target || !e.target.children) {
-                return;
-            }
-            const ele = e.target.children[0].children;
-            for (let i = 0; i < ele.length; i++) {
-                const cls = ele[i].classList;
-                if (cls.contains("nav-hide")) {
-                    cls.remove("nav-hide");
-                } else {
-                    cls.add("nav-hide");
-                }
-            }
-        },
-        out(e) {
-            if (!e.target || !e.target.children) {
-                return;
-            }
-            const ele = e.target.offsetParent.children[0].children;
-            for (let i = 0; i < ele.length; i++) {
-                const cls = ele[i].classList;
-                if (cls.contains("nav-hide")) {
-                    cls.remove("nav-hide");
-                } else {
-                    cls.add("nav-hide");
-                }
-            }
-        }
     }
 };
 </script>

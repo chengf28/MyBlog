@@ -6,7 +6,10 @@ body {
 <template>
     <div class="content">
         <navigation></navigation>
-        <router-view></router-view>
+        asd
+        <section class="display">
+            <router-view></router-view>
+        </section>
         <icp></icp>
     </div>
 </template>

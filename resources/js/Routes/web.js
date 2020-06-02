@@ -5,49 +5,48 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 
-
 export default new VueRouter({
     routes: [
         {
-            'path': '/',
-            'name': 'home',
-            'component': require('#/Home').default
+            path: '/',
+            name: 'home',
+            component: require('#/Home').default,
+            meta: {
+                name: '开始',
+                descript: '起点也是终点,开始就输了'
+            }
         },
         {
-            'path': 'layout',
-            'name': 'layout',
-            'component': require('#/Layout').default,
-            'children': [
+            path: '/layout',
+            name: 'layout',
+            component: require('#/Layout').default,
+            redirect: 'home',
+            children: [
                 {
-                
-                    'path': 'photo',
-                    'name': 'photo',
-                    'component': require('#/PhotoTags').default,
-                    'meta': {
-                        'name': '光线 、影 、色彩',
-                        'descript':'随便乱拍'
-                    }
-                    // }, {
-                    //     'path': 'photos/:tagid',
-                    //     'name': 'photos',
-                    //     'component': require('#/Photos').default,
-                    // },{
-                }, {
-                    'path': 'code',
-                    'name': 'code',
-                    'component': require('#/PhotoTags').default,
-                    'meta': {
-                        'name': '零与一',
-                        'descript':'编程的世界,其实就是简单的0与1'
+                    path: 'code',
+                    name: 'code',
+                    component: require('#/PhotoTags').default,
+                    meta: {
+                        name: '零&一',
+                        descript: '编程的世界,非零即一'
                     }
                 },
                 {
-                    'path': 'paper',
-                    'name': 'paper',
-                    'component': require('#/PhotoTags').default,
-                    'meta': {
-                        'name': '二十一克',
-                        'descript':'人的灵魂只有21克'
+                    path: 'photo',
+                    name: 'photo',
+                    component: require('#/PhotoTags').default,
+                    meta: {
+                        name: '光线 、影 、色彩',
+                        descript: '让时间停下来'
+                    }
+                },
+                {
+                    path: 'paper',
+                    name: 'paper',
+                    component: require('#/PhotoTags').default,
+                    meta: {
+                        name: '二十一克',
+                        descript: '据说人的灵魂有二十一克'
                     }
                 }
             ]

@@ -3,7 +3,6 @@
         <section id="photo_display">
             <div class="pannel_container">
                 {{$route.params.tagid}}
-                
             </div>
         </section>
     </div>
